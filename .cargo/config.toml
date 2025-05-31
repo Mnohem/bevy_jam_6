@@ -70,14 +70,14 @@
 # - mold linker: https://github.com/rui314/mold#installation 
 
 
-[unstable]
-codegen-backend = true
+# [unstable]
+# codegen-backend = true
 
 [profile]
 incremental = true
 
 [profile.dev]
-codegen-backend = "cranelift"
+# codegen-backend = "cranelift"
 debug = false
 
 # Consider compiling deps with cranelift if you want cold-compilation to be faster
