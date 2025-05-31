@@ -68,7 +68,6 @@
 # - nightly rust: rustup toolchain install nightly
 # - cranelift: rustup component add rustc-codegen-cranelift-preview --toolchain nightly
 # - mold linker: https://github.com/rui314/mold#installation 
-# - sccache: https://github.com/mozilla/sccache#installation
 
 
 [unstable]
@@ -86,6 +85,7 @@ debug = false
 codegen-backend = "llvm"
 
 # cranelift is `panic = abort`, so you need to compile with llvm to get `#[should_panic]` working
+
 [profile.test.package."*"]
 codegen-backend = "llvm"
 
@@ -98,11 +98,9 @@ codegen-backend = "llvm"
 codegen-backend = "llvm"
 
 [build]
-# Requires setting `CARGO=1` or it breaks `Bevy CLI`: https://github.com/TheBevyFlock/bevy_cli/issues/429
-rustc-wrapper = "/home/mnohem/.cargo/bin/sccache"
 # Using a global target dir allows all projects to share incremental compilation results,
 # vastly speeding up cold-compilation of new projects.
-target-dir = "/home/mnohem/.cargo/global-target"
+target-dir = "$HOME/.cargo/global-target"
 
 [target.x86_64-unknown-linux-gnu]
 # Note: make sure you've installed dioxus CLI with
