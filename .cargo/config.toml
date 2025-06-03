@@ -97,11 +97,6 @@ debug = false
 # [profile.web]
 # codegen-backend = "llvm"
 
-[build]
-# Using a global target dir allows all projects to share incremental compilation results,
-# vastly speeding up cold-compilation of new projects.
-target-dir = "$HOME/.cargo/global-target"
-
 [target.x86_64-unknown-linux-gnu]
 # Note: make sure you've installed dioxus CLI with
 # cargo install dioxus-cli --git https://github.com/laundmo/dioxus --branch=subsecond-fuse-ld
